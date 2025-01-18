@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
-// define the mongodb connection uml
-const mongoURL = 'mongodb://localhost:27017/hotel'//replace my databasewith any data base
+require('dotenv').config();
 
+// define the mongodb connection uml 
+ //const mongoURL = 'mongodb://localhost:27017/hotel'//replace my databasewith any data base
+//const mongoURL = 'mongodb+srv://puzashah:puja1234@cluster0.zuzym.mongodb.net/'
+//const mongoURL = prcess.env.MONGODB_URL_LOCAL
+const mongoURL = process.env.MONGODB_URL;
 //setup mongodb connection
 mongoose.connect(mongoURL,{
     useNewUrlParser: true,

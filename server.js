@@ -5,6 +5,9 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());//req.body
 const person = require('./models/person');
 const MenuItem = require('./models/MenuItem');
+require('dotenv').config();
+
+const PORT = process.env.PORT || 3001;
 
 app.get('/', function (req, res){
  res.send('welcome to my hotel.......how can i help u sir.')
@@ -97,6 +100,8 @@ app.post('/Menu', async(req,res)=>{
      //use the routers
      app.use('./person', personRoutes);
      app.use('./Menu', MenuItemRoutes);
+
+     
   
 
 app.listen(3001, ()=>{
